@@ -40,6 +40,7 @@ export function PublicNavigation({ content, home = false }: { content: SiteConte
                 </div>
               </div>
             </div>
+            <a href="/hakkimizda">Hakkımızda</a>
             <a href="/blog">Blog</a>
             <a href={home ? "#yaklasim" : "/#yaklasim"}>Yaklaşım</a>
             <a href={home ? "#iletisim" : "/#iletisim"}>İletişim</a>
@@ -56,6 +57,7 @@ export function PublicNavigation({ content, home = false }: { content: SiteConte
           <div className={`mobile-menu__submenu ${mobileSection === "services" ? "is-open" : ""}`}>{services.map((item) => <a key={item.id} href={`/hizmetler#${item.id}`}><span>{item.number}</span>{item.title}<ChevronRight /></a>)}</div>
           <div className="mobile-menu__section-row"><a href="/kategoriler">Kategoriler</a><button type="button" aria-label="Kategori alt menüsünü aç" aria-expanded={mobileSection === "categories"} onClick={() => setMobileSection((current) => current === "categories" ? null : "categories")}><ChevronDown /></button></div>
           <div className={`mobile-menu__submenu ${mobileSection === "categories" ? "is-open" : ""}`}>{sectors.map((item) => <a key={item.id} href={`/kategoriler#${item.id}`}><span>{item.number}</span>{item.title}<ChevronRight /></a>)}</div>
+          <a href="/hakkimizda">Hakkımızda</a>
           <a href="/blog">Blog</a>
           <a href={home ? "#yaklasim" : "/#yaklasim"}>Yaklaşım</a>
           <a href={home ? "#iletisim" : "/#iletisim"}>İletişim</a>

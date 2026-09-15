@@ -59,7 +59,7 @@ export default async function BlogPage() {
 
       <footer className="new-footer catalog-footer">
         <div className="site-container new-footer__top"><BrandLogo {...content.brand} primary="#ffffff" accent={content.brand.accentColor} /><p>{content.footer.summary}</p></div>
-        <div className="site-container new-footer__bottom"><span>© {new Date().getFullYear()} {content.brand.name}</span><div><a href="/">Ana sayfa</a><a href="/hizmetler">Hizmetler</a><a href="/kategoriler">Kategoriler</a><a href="/blog">Blog</a></div></div>
+        <div className="site-container new-footer__bottom"><span>© {new Date().getFullYear()} {content.brand.name}</span><div><a href="/">Ana sayfa</a><a href="/hizmetler">Hizmetler</a><a href="/kategoriler">Kategoriler</a><a href="/hakkimizda">Hakkımızda</a><a href="/blog">Blog</a></div></div>
       </footer>
     </div>
   );

@@ -194,7 +194,7 @@ export function SiteClient({ content }: { content: SiteContent }) {
 
       <footer className="new-footer">
         <div className="site-container new-footer__top"><BrandLogo {...content.brand} primary="#ffffff" accent={content.brand.accentColor} /><p>{content.footer.summary}</p></div>
-        <div className="site-container new-footer__bottom"><span>© {new Date().getFullYear()} {content.brand.name}</span><div><a href="/hizmetler">Hizmetler</a><a href="/kategoriler">Kategoriler</a><a href="/blog">Blog</a>{content.socials.filter((item) => item.active && item.url).map((item) => <a key={item.id} href={item.url} target="_blank" rel="noreferrer">{item.platform}</a>)}</div></div>
+        <div className="site-container new-footer__bottom"><span>© {new Date().getFullYear()} {content.brand.name}</span><div><a href="/hizmetler">Hizmetler</a><a href="/kategoriler">Kategoriler</a><a href="/hakkimizda">Hakkımızda</a><a href="/blog">Blog</a>{content.socials.filter((item) => item.active && item.url).map((item) => <a key={item.id} href={item.url} target="_blank" rel="noreferrer">{item.platform}</a>)}</div></div>
       </footer>
 
       <Dialog open={Boolean(detail)} onOpenChange={(open) => !open && setDetail(null)}>
