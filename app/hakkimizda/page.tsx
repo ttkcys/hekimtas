@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 const representatives = [
-  { number: "01", name: "Recep Çiçek", title: "İstanbul Temsilcisi", phone: "0507 202 28 25" },
-  { number: "02", name: "Nihat Arık", title: "Almanya Temsilcisi", phone: "0546 101 09 60" },
+  { number: "02", name: "Recep Çiçek", title: "İstanbul Temsilcisi", phone: "0507 202 28 25" },
+  { number: "03", name: "Nihat Arık", title: "Almanya Temsilcisi", phone: "0546 101 09 60" },
 ];
 
 export default async function AboutPage() {
@@ -30,10 +30,6 @@ export default async function AboutPage() {
             <p className="section-kicker">Hakkımızda</p>
             <div>
               <h2>{content.brand.name} Danışmanlık</h2>
-              <div className="new-hero__domain" style={{ marginTop: 28 }}>
-                <span>{content.contact.officialTitle}</span>
-                <strong>{content.contact.official}</strong>
-              </div>
               <p>Hekimtaş Danışmanlık, işletmelerin yatırım, finansman ve dış ticaret kararlarına hazırlanmasına destek olur. Her işletmenin ihtiyacı ve çalışma biçimi farklıdır. Bu nedenle sürece hazır bir çözümle değil; işletmenin hedeflerini, finansal yapısını ve faaliyet gösterdiği sektörün koşullarını anlayarak başlarız.</p>
               <p>Kredi ve fon seçeneklerinin değerlendirilmesi, yatırım dosyasının hazırlanması, ithalat ve ihracat süreçlerinin planlanması gibi alanlarda çalışırız. Amacımız yalnızca bir başvuru dosyası oluşturmak değil, işletmenin atacağı adımları anlaşılır ve uygulanabilir bir plana dönüştürmektir.</p>
             </div>
@@ -57,18 +53,31 @@ export default async function AboutPage() {
         <section className="content-section">
           <div className="site-container">
             <div className="section-heading-new">
-              <p className="section-kicker">Temsilcilerimiz</p>
-              <div><p>Farklı bölgelerdeki işletmelere yerinde destek sağlamak için temsilcilerimizle çalışıyoruz.</p></div>
+              <p className="section-kicker">Yönetim ve Temsilcilerimiz</p>
+              <div><p>Yönetim kurulu başkanımız ve farklı bölgelerdeki temsilcilerimizle işletmelere yerinde destek sağlıyoruz.</p></div>
             </div>
-            <div className="catalog-sector-grid">
-              {representatives.map((person) => (
-                <article className="catalog-sector-card" key={person.name}>
-                  <div className="catalog-sector-card__head"><span>{person.number}</span></div>
-                  <h2>{person.name}</h2>
-                  <p className="catalog-sector-card__short">{person.title}</p>
-                  <p><a href={`tel:${person.phone.replace(/\D/g, "")}`}>Telefon: {person.phone}</a></p>
+            <div className="org-tree">
+              <div className="org-tree__lead">
+                <article className="catalog-sector-card org-tree__card org-tree__card--lead">
+                  <div className="catalog-sector-card__head"><span>01</span></div>
+                  <h2>{content.contact.official}</h2>
+                  <p className="catalog-sector-card__short">{content.contact.officialTitle}</p>
                 </article>
-              ))}
+              </div>
+              <div className="org-tree__trunk" aria-hidden="true" />
+              <div className="org-tree__branch" aria-hidden="true" />
+              <div className="org-tree__children">
+                {representatives.map((person) => (
+                  <div className="org-tree__child" key={person.name}>
+                    <article className="catalog-sector-card org-tree__card">
+                      <div className="catalog-sector-card__head"><span>{person.number}</span></div>
+                      <h2>{person.name}</h2>
+                      <p className="catalog-sector-card__short">{person.title}</p>
+                      <p><a href={`tel:${person.phone.replace(/\D/g, "")}`}>Telefon: {person.phone}</a></p>
+                    </article>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

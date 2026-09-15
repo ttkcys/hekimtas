@@ -84,3 +84,16 @@
 @media(max-width:760px){.home-journal__grid,.blog-grid,.related-posts__grid{grid-template-columns:1fr}.journal-card:last-child,.related-posts__grid>a:last-child{grid-column:auto}.journal-card__media,.blog-card__media{height:210px}.detail-modal{width:min(100vw - 20px,620px);max-height:94svh}.detail-modal__layout{display:block;min-height:0}.detail-modal__visual{height:215px;min-height:0}.detail-modal__visual-bottom strong{font-size:5rem}.detail-modal__content{padding:28px 22px 30px}.detail-modal__summary{grid-template-columns:1fr 1fr}.detail-modal__summary small{grid-column:1/-1;text-align:left}.detail-modal__actions{align-items:stretch;flex-direction:column}.detail-modal__actions .cta{width:100%}.blog-hero__grid{width:100%}.blog-hero__copy{padding:65px 22px}.blog-featured{min-height:450px}.blog-index__head{grid-template-columns:1fr;gap:22px}.blog-index__head>p{margin:0}.blog-contact__inner{align-items:flex-start;flex-direction:column}.blog-contact .cta{width:100%}.article-hero__grid{width:100%}.article-hero__copy{padding:55px 22px}.article-hero__media{min-height:340px}.article-body__grid{grid-template-columns:1fr}.article-body aside{position:relative;top:auto}.article-content ul{grid-template-columns:1fr}.article-cta{align-items:flex-start;flex-direction:column}.article-cta .cta{width:100%}}
 @media(max-width:520px){.service-card{min-height:455px;padding:18px}.service-card__media{height:140px}.catalog-visual-strip{grid-template-columns:1fr}.catalog-visual-strip figure{height:230px}.blog-hero__copy h1{font-size:3.4rem}.blog-featured__content{padding:28px 22px}.blog-featured__content h2{font-size:2.55rem}.article-hero h1{font-size:3rem}.article-content h2{font-size:2.3rem}.related-posts__grid img{height:210px}}
 .detail-modal{--ink:#0a2037;--cyan:#13a7a0}
+
+/* Org chart (leadership + representatives) */
+.org-tree{display:flex;flex-direction:column;align-items:center;margin-top:16px}
+.org-tree__lead{width:100%;max-width:400px}
+.org-tree__card{min-height:auto;padding:clamp(26px,3vw,40px)}
+.org-tree__card h2{margin-top:24px;font-size:clamp(1.7rem,2.1vw,2.3rem);line-height:1.08;white-space:nowrap}
+.org-tree__card--lead{border-top:3px solid var(--cyan)}
+.org-tree__trunk{width:1px;height:40px;background:#cfd9dc}
+.org-tree__branch{width:100%;max-width:760px;height:1px;background:#cfd9dc}
+.org-tree__children{display:flex;justify-content:center;gap:clamp(30px,5vw,60px);width:100%;max-width:760px}
+.org-tree__child{position:relative;width:100%;max-width:350px;padding-top:40px}
+.org-tree__child::before{content:"";position:absolute;top:0;left:50%;width:1px;height:40px;background:#cfd9dc;transform:translateX(-50%)}
+@media(max-width:760px){.org-tree__branch{display:none}.org-tree__children{flex-direction:column;align-items:center;max-width:400px}.org-tree__child::before{height:24px}.org-tree__trunk{height:24px}}
