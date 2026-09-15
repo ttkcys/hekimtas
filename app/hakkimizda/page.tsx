@@ -13,9 +13,13 @@ export const metadata: Metadata = {
 };
 
 const representatives = [
-  { number: "02", name: "Recep Çiçek", title: "İstanbul Temsilcisi", phone: "0507 202 28 25" },
-  { number: "03", name: "Nihat Arık", title: "Almanya Temsilcisi", phone: "0546 101 09 60" },
+  { number: "02", name: "Recep Çiçek", title: "İstanbul Temsilcisi", phones: ["0507 202 28 25"] },
+  { number: "03", name: "Nihat Arık", title: "Almanya Temsilcisi", phones: ["0546 101 09 60", "+49 171 2121800"] },
 ];
+
+function telHref(phone: string) {
+  return `tel:${phone.replace(/(?!^\+)\D/g, "")}`;
+}
 
 export default async function AboutPage() {
   const content = await getSiteContent();
@@ -73,7 +77,7 @@ export default async function AboutPage() {
                       <div className="catalog-sector-card__head"><span>{person.number}</span></div>
                       <h2>{person.name}</h2>
                       <p className="catalog-sector-card__short">{person.title}</p>
-                      <p><a href={`tel:${person.phone.replace(/\D/g, "")}`}>Telefon: {person.phone}</a></p>
+                      {person.phones.map((phone) => <p key={phone}><a href={telHref(phone)}>Telefon: {phone}</a></p>)}
                     </article>
                   </div>
                 ))}
